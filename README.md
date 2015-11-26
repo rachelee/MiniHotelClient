@@ -1,0 +1,1 @@
+# Mini Hotel — AngularJS client

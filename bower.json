@@ -1,0 +1,27 @@
+{
+  "name": "Mini Hotel",
+  "description": "AngularJS client for MiniHotel",
+  "version": "0.0.1",
+  "homepage": "https://github.com/rachelee/MiniHotelClient",
+  "license": "MIT",
+  "dependencies": {
+    "angular-loader": "~1.4.0",
+    "angular-route": "~1.4.0",
+    "angular-mocks": "~1.4.0",
+    "html5-boilerplate": "~5.2.0",
+    "bootstrap": "~3.3.5"
+  },
+  "authors": [
+    "rachelee <lixiaox5@gmail.com>"
+  ],
+  "main": "",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "under_reservation": "50",
+  "in_service": "30",
+  "vacant":"10",
+  "available":"0"
+}

@@ -1,0 +1,17 @@
+<div class="row" ng-controller="ReportCtrl">
+    <div class="col-lg-8" style="margin-top:20px">
+        <div>
+            <h2>Choose a date:</h2>
+            <p class="input-group">
+                <input type="date" class="form-control" ng-change="chooseDate()" ng-model="chosenDate" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+            </p>
+        </div>
+        <div>
+            <div ng-hide="hide">
+                <fusioncharts  width="600" height="400" type="column2d" datasource="{{result}}"></fusioncharts>
+            </div>
+
+        </div>
+    </div><!-- /.col-lg-8 -->
+
+</div><!-- /.row -->

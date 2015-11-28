@@ -2,11 +2,11 @@
 
 // Declare app level module which depends on views, and components
 var app = angular.module('myApp', [
-  'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.check_in',
-  'myApp.version'
+    'ngRoute',
+    'myApp.view1',
+    'myApp.view2',
+    'myApp.check_in',
+    'myApp.report'
 ]);
 
 app.config(['$routeProvider', function($routeProvider) {

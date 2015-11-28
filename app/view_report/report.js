@@ -24,7 +24,7 @@ app.controller('ReportCtrl', ['$scope','$http', function($scope, $http) {
 
     $scope.chooseDate=function(){
       $scope.hide = false;
-      $scope.request.date = $scope.chosenDate.getUTCMonth()+"/"+$scope.chosenDate.getUTCDay()+"/"+$scope.chosenDate.getUTCFullYear();
+      $scope.request.date = ($scope.chosenDate.getMonth()+1)+"/"+$scope.chosenDate.getDate()+"/"+$scope.chosenDate.getFullYear();
       $scope.result.chart.subCaption=$scope.request.date;
       console.log("Creating report...");
       $http({

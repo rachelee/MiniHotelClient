@@ -1,0 +1,20 @@
+{
+  "rooms": [
+    {"room_number":"2234",
+      "room_type":"King Bed",
+     "smoking": "Smoking",
+      "chosen": "false"
+     },
+    {"room_number":"1234",
+      "room_type":"King Bed",
+      "smoking": "Smoking",
+      "chosen": "false"
+    },
+    {"room_number":"3234",
+      "room_type":"King Bed",
+      "smoking": "Smoking",
+      "chosen": "false"
+    }
+
+  ]
+}

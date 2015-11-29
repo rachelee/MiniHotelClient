@@ -9,7 +9,20 @@ angular.module('myApp.search', ['ngRoute'])
   });
 }])
 
-.controller('SearchCtrl', ['$cookies', '$scope', function($cookies, $scope) {
-    $scope.user=$scope.cookies;
+.controller('SearchCtrl', ['$scope','$http', function($scope, $http) {
+    $scope.request={};
+    $scope.rooms=[];
+    $scope.search=function(){
+        console.log("Searching rooms...");
+        $http({
+            method: "GET",
+            //url: 'http://localhost:8080/checkin',
+            url:'view_search/rooms.json',
+            params: $scope.request,
+        })
+        .success(function(data){
+            $scope.rooms=data.rooms;
+        });
+    }
 
 }]);

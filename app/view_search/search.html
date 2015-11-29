@@ -1,1 +1,67 @@
-<p>This is the partial for view 1.</p>
+<div class="row" ng-controller='SearchCtrl'>
+    <div class="col-lg-8" style="margin-top:20px">
+        <div><img src="view_checkin/vacation.jpg" style="display: block; margin-left:auto;margin-right:auto"></div>
+
+
+        <div class="form-group">
+
+            <label for="check_in">Check In</label>
+            <input type="date" class="form-control" ng-change="chooseDate()" ng-model="checkin_date" min-date="minDate"
+                   max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)"
+                   ng-required="true" close-text="Close" id="check_in"/>
+            <label for="check_out">Check Out</label>
+            <input type="date" class="form-control" ng-change="chooseDate()" ng-model="checkout_date" min-date="minDate"
+                   max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)"
+                   ng-required="true" close-text="Close" id="check_out"/>
+            <label for="room_type">Room Type</label>
+            <select ng-model="room_type" class="form-control" id="room_type">
+                <option>King bed</option>
+                <option>Two Queue beds</option>
+                <option>Not care</option>
+            </select>
+
+            <label for="smoke_pref">Smoking Preference</label>
+            <select ng-model="smoking" class="form-control" id="smoke_pref">
+                <option>Smoking</option>
+                <option>Non-Smoking</option>
+                <option>Not care</option>
+            </select>
+
+            <label for="room_num" ng-model="room_num">Number of Rooms</label>
+            <select class="form-control" id="room_num">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+            </select>
+            <button ng-click="search()" style="margin-top:20px;" type="button" class="btn btn-default">Search</button>
+        </div>
+
+        <table class="table table-striped" ng-hide="rooms.length===0">
+            <thead>
+            <tr>
+                <th>Room Number</th>
+                <th>Room Type</th>
+                <th>Smoking Preference</th>
+                <th>Choose</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="room in rooms">
+                <td>{{room.room_number}}</td>
+                <td>{{room.room_type}}</td>
+                <td>{{room.smoking}}</td>
+                <td><input ng-model='room.chosen' type="checkbox" name="vehicle" value="Bike">Choose<br></td>
+            </tr>
+
+            </tbody>
+        </table>
+
+
+</div><!-- /.row -->

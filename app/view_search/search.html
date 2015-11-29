@@ -57,11 +57,12 @@
                 <td>{{room.room_number}}</td>
                 <td>{{room.room_type}}</td>
                 <td>{{room.smoking}}</td>
-                <td><input ng-model='room.chosen' type="checkbox" name="vehicle" value="Bike">Choose<br></td>
+                <td><input ng-click="print()" ng-model='room.chosen' type="checkbox" name="vehicle" value="Bike">Choose<br></td>
             </tr>
 
             </tbody>
         </table>
+        <button ng-hide="rooms.length===0" ng-click="reserve()" style="margin-top:20px;" type="button" class="btn btn-default">Reserve</button>
 
 
 </div><!-- /.row -->

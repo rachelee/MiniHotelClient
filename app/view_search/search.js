@@ -9,7 +9,7 @@ angular.module('myApp.search', ['ngRoute'])
   });
 }])
 
-.controller('SearchCtrl', ['$scope','$http', function($scope, $http) {
+.controller('SearchCtrl', ['$cookies','$scope','$http', function($cookies, $scope, $http) {
     $scope.request={};
     $scope.rooms=[];
     $scope.search=function(){
@@ -23,6 +23,26 @@ angular.module('myApp.search', ['ngRoute'])
         .success(function(data){
             $scope.rooms=data.rooms;
         });
-    }
+    };
+    $scope.print = function(){
+        console.log($scope.rooms);
+    };
+    $scope.reserve=function() {
+        console.log("Saving information...")
+        console.log($scope.rooms);
+        var roomsToReserve = [];
+        for (var i = 0; i < $scope.rooms.length; i++) {
+            if ($scope.rooms[i].chosen === true) {
+                roomsToReserve.push($scope.rooms[i]);
+            }
+        }
+        if (roomsToReserve.count === 0) {
+            console.log("No room selected");
+        }
+        else {
+            $cookies.put("reserve", roomsToReserve);
+            console.log(roomsToReserve);
+        }
+    };
 
 }]);

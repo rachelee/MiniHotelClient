@@ -1,59 +1,57 @@
 <html>
-<!--<body class="media-cover" style="background-image: url(background.jpg); background-position: center;">-->
 <div class="media-cover"></div>
 <div class="row center" ng-controller='SearchCtrl'>
 
-
-    <div class="col-sm-12" style="margin-top:20px">
-        <div class="col-center">
-            <h1></h1>
-            <!--<img class="col-center" src="view_checkin/vacation.jpg" >-->
-        </div>
+    <div class="searchbar col-sm-12" style="margin-top:20px">
         <div class="col-center"><h1 style="text-align: center;">Mini Hotel</h1></div>
         <div class="col-center"><h2 style="text-align: center; margin-bottom: 2em;">Enjoy your day. Relax your night.</h2></div>
 
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-        <div class="form-group col-center">
-
-            <label class="form-text" for="check_in">Check In</label>
-            <input type="date" class="form-control" ng-change="chooseDate()" ng-model="checkin_date" min-date="minDate"
-                   max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" placeholder="Check In"
-                   ng-required="true" close-text="Close" id="check_in"/>
-            <label class="form-text" for="check_out">Check Out</label>
-            <input type="date" class="form-control" ng-change="chooseDate()" ng-model="checkout_date" min-date="minDate"
-                   max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)"
-                   ng-required="true" close-text="Close" id="check_out"/>
-            <label class="form-text" for="room_type">Room Type</label>
-            <select ng-model="room_type" class="form-control" id="room_type">
-                <option>King bed</option>
-                <option>Two Queue beds</option>
-                <option>Not care</option>
-            </select>
-
-            <label class="form-text" for="smoke_pref">Smoking Preference</label>
-            <select ng-model="smoking" class="form-control" id="smoke_pref">
-                <option>Smoking</option>
-                <option>Non-Smoking</option>
-                <option>Not care</option>
-            </select>
-
-            <label class="form-text" for="room_num" ng-model="room_num">Number of Rooms</label>
-            <select class="form-control" id="room_num">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-                <option>9</option>
-                <option>10</option>
-            </select>
-            <button ng-click="search()" style="margin-top:20px;" type="button" class="btn btn-default">Search</button>
-        </div>
-
-
+                    <form class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                            <!--<input type="text" class="form-control" placeholder="Search">-->
+                            <!--<label class="form-text" for="check_in">Check In</label>-->
+                            <input type="date" class="form-control col-sm-1" ng-change="chooseDate()" ng-model="checkin_date" min-date="minDate"
+                                   max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" placeholder="Check In"
+                                   ng-required="true" close-text="Close" id="check_in"/>
+                            <!--<label class="form-text" for="check_out">Check Out</label>-->
+                            <input type="date" class="form-control" ng-change="chooseDate()" ng-model="checkout_date" min-date="minDate"
+                                   max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)"
+                                   ng-required="true" close-text="Close" id="check_out"/>
+                            <!--<label class="form-text" for="room_type">Room Type</label>-->
+                            <select ng-model="room_type" class="form-control" id="room_type">
+                                <option>King Bed</option>
+                                <option>Two Queen Beds</option>
+                                <!--<option>Not care</option>-->
+                            </select>
+                            <select ng-model="smoking" class="form-control" id="smoke_pref">
+                                <option>Smoking</option>
+                                <option>Non-Smoking</option>
+                                <option>Not care</option>
+                            </select>
+                            <select class="form-control" id="room_num">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                            </select>
+                            <button ng-click="search()" style="" type="button" class="btn btn-default">Search</button>
+                            <!--<button ng-hide="rooms.length===0" ng-click="reserve()" style="" type="button" class="btn btn-default">Reserve</button>-->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </nav>
 
         <div class="panel panel-default" ng-hide="rooms.length===0">
             <!-- Default panel contents -->
@@ -73,7 +71,7 @@
                     <td>{{room.room_number}}</td>
                     <td>{{room.room_type}}</td>
                     <td>{{room.smoking}}</td>
-                    <td><input ng-click="print()" ng-model='room.chosen' type="checkbox" name="vehicle" value="Bike">Choose<br></td>
+                    <td><input ng-click="print()"  ng-model='room.chosen' type="checkbox" name="vehicle" value="Bike"><br></td>
                 </tr>
 
                 </tbody>
@@ -81,12 +79,6 @@
         </div>
         <button ng-hide="rooms.length===0" ng-click="reserve()" style="" type="button" class="btn btn-default">Reserve</button>
 
-
-
-
     </div>
-
 </div>
-
-<!--</body>-->
 </html>

@@ -9,6 +9,19 @@
   background-image: url(background.jpg);
   background-position: center;
 }
+
+.media-checkinbg {
+  position:absolute;
+  top: 6%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1000px;
+  background-image: url(checkinbg.jpg);
+  background-position: center;
+  margin-top: -5px;
+}
+
 .logo {
   position:absolute;
   top: 0;
